@@ -1,6 +1,6 @@
-# My Awesome Book
+# Unity 2017 Game Optimization(2nd)
 
 This file file serves as your book's preface, a great place to describe your book's content and ideas.
 
-![](/assets/BingWallpaper-2017-12-19.jpg)
+![](/assets/cover.png)
 
