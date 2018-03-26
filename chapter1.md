@@ -50,8 +50,29 @@ Unity Profiler是Unity编辑器中内置的工具，我们通过他提供的可�
 
 
 
-### 1.1 启动
+### 1.1 启动调试Profiler
 
+接下来我们会对各种一下环境下运行的游戏如何连接Unity Profiler进行简单的介绍
+
+ - 本地程序实例，包括编辑器模式下运行的或者以独立端运行的
+ - WebGL实例，运行在浏览器中
+ - IOS设备中运行的程序实例，如 Iphone或者Ipad设备中
+ - Android设备中运行的程序实例，Android平板或者手机设备
+ - 编辑器模式下的Profiler本身
+
+我们会简明的说明在各个环境中的需要的设置步骤
+
+#### 1.1.1 编辑器或者独立端环境下
+
+使用Profiler的唯一途径是在Unity编辑器中启动然后连接到一个运行的程序实例，该实例可以是在编辑器的Play 模式下运行，也可以是运行在本地的或者远程设备上的程序。
+
+可以通过Window->Profiler打开分析器窗口
+
+![](/assets/1-1.png)
+
+>如果编辑器已经处于运行模式下我们可以立刻在Profiler窗口中立刻看到报告数据
+
+为了在独立客户端中使用Profiler，必须确保在打包之前在Build Setting 中必须勾选Development Build选项和Autoconnect Profiler选项
 
 
 基准测试，又称为标杆分析。
