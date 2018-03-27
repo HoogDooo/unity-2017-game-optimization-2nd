@@ -82,7 +82,11 @@ Unity Profiler是Unity编辑器中内置的工具，我们通过他提供的可�
 
 >注意，在Unity 5的版本中，Development Build选项的名称是 Use Development Mode， Connected Player选项的名称是Active Profiler。
 
+#### 1.1.2 连接WebGL程序实例
 
+Profiler同样可以用于连接WebGL程序实例，方法是在编译打包程序前勾选Development Build 和Autoconnect Profiler选项。打包后程序将会在系统默认浏览器中打开。这样可以使我们在更加接近于真实的测试情景下观测我们的程序在不同浏览器中的运行情况（虽然需要我们来回切换系统的默认浏览器）。
+
+不幸的是，我们只能在
 
 
 基准测试，又称为标杆分析。
