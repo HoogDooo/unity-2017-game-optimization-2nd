@@ -86,7 +86,53 @@ Unity Profiler是Unity编辑器中内置的工具，我们通过他提供的可�
 
 Profiler同样可以用于连接WebGL程序实例，方法是在编译打包程序前勾选Development Build 和Autoconnect Profiler选项。打包后程序将会在系统默认浏览器中打开。这样可以使我们在更加接近于真实的测试情景下观测我们的程序在不同浏览器中的运行情况（虽然需要我们来回切换系统的默认浏览器）。
 
-不幸的是，我们只能在
+不幸的是，程序只在第一次从编辑器启动的时候才会和Profiler建立连接。就目前的版本而言（2017）我们无法做到和已经运行在浏览器的WebGL客户端进行调试。虽然由于编辑器的性能消耗会影响我们的基准测试，但我们别无选择。
+
+#### 1.1.3 连接远程Ios设备
+
+调试器同样可以与运行在IOS设备上的远程客户端进行调试，比如Ipad或者Iphone。前提是确保设备连接的wifi和编辑器连接的网络处于同一局域网。
+
+>注意，只有当Unity编辑器运行在Apple Mac设备上时候此连接方式才可用
+
+建立连接的步骤如下：
+
+ - 在打包程序之前，确保Development Build 和Autoconnect Profiler选项已经勾选
+ - 将Mac设备和Ios设备连接到处于同一个局域网的wifi上
+ - 通过数据线连接Mac和Ios设备
+ - 像往常一样运行Buld & Run
+ - 打开Profiler窗口在Connect Player中心厕设备
+
+你将会看到Ios设备的分析数据出现在Profiler窗口中
+
+>Unity引擎内的Profiler模块使用54998-555511范围内的端口去广播分析数据，所以在有防火墙的时候请确保这些端口可以正常通信
+
+如果对于连接Ios分析调试工程有其他疑难问题，可以查阅官方文档：https://docs.unity3d.com/Manual/TroubleShootingIPhone.html
+
+#### 1.1.4 连接远程Android设备
+
+将Android设备连接到Unity Profiler有两种方式：通过WIFI连接或者使用ADB连接。这两种方式在Mac和Pc设备上都可以使用。
+
+使用Wifi连接设备步骤如下：
+
+ - 在打包构建之前请确保Development Build 和Autoconnect Profiler选项勾选
+ - 将Android设备和电脑设备连接到同一个局域网的Wifi中
+ - 使用USE数据线将Android设备连接到电脑中
+ - 像往常一样点击 Build & Run选项构建打包工程
+ - 在编辑器中打开Profiler窗口，在Connected Player中选择Android设备
+
+然后程序会进行打包并通过USB连接线推送到设备中，Profiler会通过wifi和设备通信相关的调试信息，这些信息就会在Profiler窗口中出现
+
+第二种方式是使用ADB。ADB是安卓SDK工具包中包含的一套工具。步骤如下：
+
+ - 请先确保按照官方文档https://docs.unity3d.com/Manual/android-sdksetup.html设置了Androi SDK/NDK环境
+ - 通过USB数据线连接设备到电脑上
+ - 确保Development Build 和Autoconnect Profiler选项勾选
+ - 像往常一样点击 Build & Run选项构建打包工程
+ - 在编辑器中打开Profiler窗口，在Connected Player中选择Android设备
+
+你将会看到Profiler信息出现在编辑器的Profiler窗口中
+
+如果
 
 
 基准测试，又称为标杆分析。
